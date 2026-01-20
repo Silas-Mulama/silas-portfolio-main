@@ -1,0 +1,64 @@
+/* Tablet and Mobile adjustments */
+@media (max-width: 768px) {
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+
+    /* Nav Mobile Layout */
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        top: 70px;
+        background-color: var(--white);
+        height: calc(100vh - 70px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 60px;
+        transform: translateX(100%); /* Hide by default */
+        transition: transform 0.3s ease-in;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* Class added by JS to show menu */
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    /* Stack Grids */
+    .about-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-outline { margin-left: 0; }
+}
+
+/* Desktop expansions */
+@media (min-width: 769px) {
+    .about-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .skills-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
